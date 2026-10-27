@@ -1,0 +1,61 @@
+# Ficheros auxiliares de compilación
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.xdv
+
+# Bibliografía (BibTeX / Biber)
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*-blx.bib
+
+# Índices y glosarios
+*.idx
+*.ilg
+*.ind
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.acn
+*.acr
+*.alg
+*.ist
+
+# Otros paquetes
+*.auxlock
+*.figlist
+*.makefile
+*.figlist
+*.thm
+*.tdo
+*.pyg
+*.mw
+_minted*/
+*.upa
+*.upb
+
+# Latexmk / build
+build/
+out/
+
+# Editores y sistema
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
