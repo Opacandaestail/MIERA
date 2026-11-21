@@ -1,0 +1,62 @@
+\begin{titlepage}
+	
+	\centering
+	
+	\begin{tikzpicture}[remember picture, overlay]
+		
+		% Marca de agua a 40% de la altura desde el inicio de la página
+		\node[opacity=0.2, inner sep=0pt, remember picture, overlay] 
+		at (current page.north) % Posicionamos la imagen desde la parte superior
+		[yshift=-0.35\paperheight] % Desplazamos la imagen al 40% de la altura de la página
+		{\includegraphics[width=0.8\textwidth]{figures/0. General/us-giraldillo-grey.png}};
+		
+		% Logo izquierdo, movido más a la izquierda
+		\node[inner sep=0pt] (logo1) at (0,-2) % Aquí se ha agregado un yshift para bajar los logos
+		{\includegraphics[width=.25\textwidth]{figures/0. General/logo.png}};
+		
+		% Línea roja vertical, ahora con posición configurable
+		\newcommand{\linereloffset}{0.4cm} % Modifica este valor para mover la línea roja a la izquierda/derecha
+		\coordinate (linecenter) at ($(logo1.east) + (\linereloffset,0)$);
+		\draw[line width=1mm, Tue-red] 
+		($(linecenter)+(0,1.5cm)$) -- ($(linecenter)+(0,-2.3cm)$);
+		
+		
+		% Título centrado debajo de los dos logos, aumentado el tamaño
+		\node[text width=0.9\textwidth, align=center] (title) at ($(logo1.south) + (0,-3.5cm)$)
+		{\sffamily\Huge \reporttitle}; % Aumentado de \huge a \Huge
+		
+		% Subtítulo debajo del título, aumentado el tamaño
+		\node[text width=0.9\textwidth, align=center, below=0.8cm of title]
+		{\sffamily\LARGE \reportsubtitle}; % Aumentado de \Large a \LARGE
+		
+	\end{tikzpicture}
+	
+	\vspace{8cm}  % Ajustamos el espacio entre la portada y el grupo/autores
+	
+	%\sffamily\groupnumber
+	
+	\vspace{2.5cm}  % Añadimos un espacio extra para que los autores no queden tan pegados
+	
+	\begin{table}[H]
+		\centering
+		\sffamily
+		\large
+		\begin{tabu} to 0.8\linewidth {cc}
+			\textbf{Apellidos} & \textbf{Nombre}\\
+			\hline
+			
+			\sffamily\reportauthors
+			
+		\end{tabu}
+		
+	\end{table}
+	
+	\sffamily \grouptutor
+	
+	\tikz[remember picture,overlay]\node[anchor=south,inner sep=0pt] at (current page.south) {\includegraphics[width=\paperwidth]{figures/0. General/us-bg.jpg}};
+	
+	\mbox{}
+	\vfill
+	\sffamily \Large \textcolor{white}{\placeanddate} \\
+	
+\end{titlepage}
